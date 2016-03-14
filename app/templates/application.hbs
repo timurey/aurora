@@ -1,3 +1,19 @@
-<h2 id="title">Welcome to Ember</h2>
+<html>
+<head>
 
-{{outlet}}
+</head>
+<body class="skin-blue">
+<div class="wrapper">
+    {{admin-lte-header}}
+    <nav class="sidebar-wrapper">
+        {{admin-lte-sidemenu}}
+    </nav>
+    <section class="content-wrapper">
+        {{outlet}}
+
+    </section>
+    {{admin-lte-footer}}
+</div>
+
+</body>
+</html>

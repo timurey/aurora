@@ -1,0 +1,5 @@
+<!-- search form -->
+<form id="live-search" class="sidebar-form">
+	{{input type="text" name="q" enter = "" class = "form-control search-menu-box" placeholder="Search..." value=filter key-up=(action 'autoComplite' filter) insert-newline = (action 'search' filter)}}
+</form>
+<!-- /.search form -->

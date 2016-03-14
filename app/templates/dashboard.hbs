@@ -1,0 +1,30 @@
+<!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+    Состояние
+    <small>Optional description</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+      <li class="active">Here</li>
+    </ol>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    
+    <!-- Your Page Content Here -->
+    <!-- Main row -->
+    <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-5 connectedSortable ui-sortable">
+      {{#each model as |mData|}}
+      {{server-box data = mData}}
+      {{/each}}
+      </section>
+      <section class="col-lg-7 connectedSortable ui-sortable">
+        //= input_box.html
+        //= temperature_box.html
+      </section>
+    </div>
+  </section>
+  <!-- /.content -->

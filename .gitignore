@@ -3,6 +3,8 @@
 # compiled output
 /dist
 /tmp
+/to_ftp
+/gziped
 
 # dependencies
 /node_modules
