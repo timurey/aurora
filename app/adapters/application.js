@@ -4,6 +4,7 @@ var inflector = Ember.Inflector.inflector;
 
 inflector.uncountable('restapi');
 inflector.uncountable('cpu');
+inflector.uncountable('ntp');
 
 export default DS.RESTAdapter.extend({
   namespace: 'rest/v1',

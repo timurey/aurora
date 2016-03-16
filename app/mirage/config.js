@@ -1,71 +1,127 @@
 export default function() {
     this.get('/rest/v1/restapi', function() {
         return {
-            data: {
-                classes: [{
-                    name: 'clock',
-                    path: '/rest/v1/clock',
-                    method: [
-                        'GET',
-                        'POST',
-                        'PUT',
-                        'DELETE'
-                    ]
-                }, {
-                    name: 'cpu',
-                    path: '/rest/v1/cpu',
-                    method: [
-                        'GET'
-                    ]
-                }, {
-                    name: 'executors',
-                    path: '/rest/v1/executors',
-                    method: [
-                        'GET',
-                        'POST',
-                        'PUT',
-                        'DELETE'
-                    ]
-                }, {
-                    name: 'onewire',
-                    path: '/rest/v1/onewire',
-                    method: [
-                        'GET'
-                    ]
-                }, {
-                    name: 'test_rest',
-                    path: '/rest/v1/test',
-                    method: []
-                }, {
-                    name: 'sensors',
-                    path: '/rest/v1/sensors',
-                    method: [
-                        'GET',
-                        'POST',
-                        'PUT',
-                        'DELETE'
-                    ]
-                }, {
-                    name: 'variables',
-                    path: '/rest/v1/variables',
-                    method: [
-                        'GET',
-                        'POST',
-                        'PUT',
-                        'DELETE'
-                    ]
-                }, {
-                    name: 'ntp',
-                    path: '/rest/v1/ntp',
-                    method: [
-                        'GET',
-                        'POST',
-                        'PUT',
-                        'DELETE'
-                    ]
-                }]
-            }
-        };
+            'data': [{
+                'type': 'restapi',
+                'id': 1,
+                'attributes': {
+                    'type': 'clock',
+                    'read': true,
+                    'create': true,
+                    'update': true,
+                    'delete': true,
+                    'links': {
+                        'self': '/rest/v1/clock'
+                    }
+                }
+            }, {
+                'type': 'restapi',
+                'id': 2,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/cpu'
+                    },
+                    'type': 'cpu',
+                    'read': true,
+                    'create': false,
+                    'update': false,
+                    'delete': false
+                }
+            }, {
+                'type': 'restapi',
+                'id': 3,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/executors'
+                    },
+                    'type': 'executors',
+                    'read': true,
+                    'create': true,
+                    'update': true,
+                    'delete': true
+                }
+            }, {
+                'type': 'restapi',
+                'id': 4,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/onewire'
+                    },
+                    'type': 'onewire',
+                    'read': true,
+                    'create': false,
+                    'update': false,
+                    'delete': false
+                }
+            }, {
+                'type': 'restapi',
+                'id': 5,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/restapi'
+                    },
+                    'type': 'restapi',
+                    'read': true,
+                    'create': false,
+                    'update': false,
+                    'delete': false
+                }
+            }, {
+                'type': 'restapi',
+                'id': 6,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/test'
+                    },
+                    'type': 'test_rest',
+                    'read': false,
+                    'create': false,
+                    'update': false,
+                    'delete': false
+                }
+            }, {
+                'type': 'restapi',
+                'id': 7,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/sensors'
+                    },
+                    'type': 'sensors',
+                    'read': true,
+                    'create': true,
+                    'update': true,
+                    'delete': true
+                }
+            }, {
+                'type': 'restapi',
+                'id': 8,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/variables'
+                    },
+                    'type': 'variables',
+                    'read': true,
+                    'create': true,
+                    'update': true,
+                    'delete': true
+                }
+            }, {
+                'type': 'restapi',
+                'id': 9,
+                'attributes': {
+                    'links': {
+                        'self': '/rest/v1/ntp'
+                    },
+                    'type': 'ntp',
+                    'read': true,
+                    'create': true,
+                    'update': true,
+                    'delete': true
+                }
+            }]
+        }
+
+        ;
     });
 
     this.get('/rest/v1/cpu', function() {
@@ -80,18 +136,22 @@ export default function() {
     this.get('/rest/v1/tests', function() {
         let tests = [{
             type: 'test',
-            id:1,
-            attributes:{
+            id: 1,
+            attributes: {
                 test: 'test1'
             }
-        },{
+        }, {
             type: 'test',
-            id:2,
-            attributes:{
+            id: 2,
+            attributes: {
                 test: 'test2'
             }
         }];
-        return {data: tests};
+        return { data: tests };
+    });
+    this.get('/rest/v1/ntp', function() {
+        let ntps = {'data':[{'type':'ntp','id':0,'attributes':{'address':'1.ru.pool.ntp.org'}},{'type':'ntp','id':1,'attributes':{'address':'2.ru.pool.ntp.org'}},{'type':'ntp','id':2,'attributes':{'address':'3.ru.pool.ntp.org'}}],'meta':{'period':3600,'timezone':'GMT+0500 (YEKT)'}};
+        return ntps;
     });
 
     // These comments are here to help you get started. Feel free to delete them.

@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-    	var cpu = this.store.findAll('cpu');
-    	return cpu;
+    	this.model.cpu = this.store.findAll('cpu');
+    	this.model.restapi = this.store.findAll('restapi');
+    	// console.log(this.model);
+    	return (this.model);
+    	
     }
 
   //   ,

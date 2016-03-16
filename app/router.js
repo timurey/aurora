@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('dashboard');
   this.route('test');
   this.route('fourOhFour', { path: "*path"});
+  this.route('system');
 });
 
 export default Router;
