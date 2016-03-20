@@ -1,7 +1,6 @@
 import Ember from 'ember';
 // import $ from 'jquery';
 export default Ember.Component.extend({
-    filter: null,
     actions: {
         autoComplite() {//Скрывает ненужные пункты меню
             var filter = this.filter;

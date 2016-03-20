@@ -15,7 +15,7 @@ gulp.task('compress', ['cp'], shell.task('./gzip_all') );
 gulp.task( 'ftp_gzip',['compress'], function () {
 
     var conn = ftp.create( {
-        host:     'stm32_1.local.',
+        host:     'aurora.local.',
         user:     'admin',
         password: 'admin',
         parallel: 1
@@ -36,7 +36,7 @@ gulp.task( 'ftp_gzip',['compress'], function () {
 gulp.task( 'ftp',['ftp_gzip'], function () {
 
     var conn = ftp.create( {
-        host:     'stm32_1.local.',
+        host:     'aurora.local.',
         user:     'admin',
         password: 'admin',
         parallel: 1

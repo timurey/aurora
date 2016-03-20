@@ -4,14 +4,24 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
     var app = new EmberApp(defaults, {
         // Add options here
+        lessOptions: {
+            paths: [
+                'bower_components/bootstrap-timepicker/css'
+            ],
+            sourceMap: 'assets/aurora.map',
+        }
     });
-        app.import("bower_components/jquery/dist/jquery.min.js");
+    app.import("bower_components/jquery/dist/jquery.min.js");
     app.import('bower_components/AdminLTE/bootstrap/css/bootstrap.css');
+    app.import('bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css');
     app.import('bower_components/AdminLTE/dist/css/AdminLTE.css');
     app.import('bower_components/AdminLTE/dist/css/skins/_all-skins.css');
     // app.import('bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js');
+
     app.import('bower_components/AdminLTE/plugins/jQueryUI/jquery-ui.min.js')
     app.import('bower_components/AdminLTE/bootstrap/js/bootstrap.min.js');
+    app.import('bower_components/AdminLTE/plugins/fastclick/fastclick.js');
+    app.import('bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js');
     app.import('bower_components/AdminLTE/dist/js/app.js');
 
     app.import('bower_components/components-font-awesome/css/font-awesome.min.css');

@@ -1,0 +1,39 @@
+          <!-- Horizontal Form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">NTP servers settings</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+				<div class="box-body">
+              {{#each ntp as |address|}}
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-laptop"></i></span>
+						{{input value= address.address class = "form-control" placeholder = (combine "NTP server #" address.id) }}
+					</div>
+                	<!-- /.input-group -->
+					<br>
+			  {{/each}}
+			  		<div class="bootstrap-timepicker">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+							{{input class = "form-control timepicker" id="timepicker" placeholder = "NTP update interval HH:MM"	 }}
+						</div>
+						<!-- /.input group -->
+						<br>
+					</div>
+					<!-- /.bootstrap-timepicker -->
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="button" class="btn btn-default" {{action "cancel"}}>Cancel</button>
+                <div class=" pull-right">
+                <button type="button" class="btn btn-primary" {{action "apple"}}>Apply</button>
+                <button type="button" class="btn btn-primary" {{action "applyAndSave"}}>Apply and Save</button>
+                </div>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->
