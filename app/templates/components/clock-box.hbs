@@ -1,0 +1,37 @@
+	          <!-- Horizontal Form -->
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Clock</h3>
+	              <div class="box-tools pull-right" data-toggle="tooltip" title="Sync with browser">
+                  <button type="button" class="btn btn-default btn-sm" {{action "sync"}}>Sync</button>
+                </div>
+	            </div>
+	            <!-- /.box-header -->
+	            <!-- form start -->
+	            <form class="form-horizontal">
+					<div class="box-body">
+	          <div class="input-group">
+	            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+	            {{input value= clock.date_and_time class = "form-control" placeholder = "Current date and time" disabled=(if true true)}}
+	          </div>
+	                  <!-- /.input-group -->
+	          <br>
+	          <div class="input-group">
+	            <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+	            {{input value= clock.timezone class = "form-control" placeholder = "GMT+0500 (YEKT)"}}
+	          </div>
+	                  <!-- /.input-group -->
+	          <br>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="button" class="btn btn-default" {{action "cancel"}}>Cancel</button>
+                <div class=" pull-right">
+                <button type="button" class="btn btn-primary" {{action "apply"}}>Apply</button>
+                <button type="button" class="btn btn-primary" {{action "applyAndSave"}}>Apply and Save</button>
+                </div>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->

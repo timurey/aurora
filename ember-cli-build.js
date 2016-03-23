@@ -25,15 +25,15 @@ module.exports = function(defaults) {
     app.import('bower_components/AdminLTE/dist/js/app.js');
 
     app.import('bower_components/components-font-awesome/css/font-awesome.min.css');
-    app.import('bower_components/components-font-awesome/fonts/FontAwesome.otf', {
-        destDir: 'fonts'
-    });
-    app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.eot', {
-        destDir: 'fonts'
-    });
-    app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.svg', {
-        destDir: 'fonts'
-    });
+    // app.import('bower_components/components-font-awesome/fonts/FontAwesome.otf', {
+    //     destDir: 'fonts'
+    // });
+    // app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.eot', {
+    //     destDir: 'fonts'
+    // });
+    // app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.svg', {
+    //     destDir: 'fonts'
+    // });
     app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf', {
         destDir: 'fonts'
     });
@@ -45,18 +45,18 @@ module.exports = function(defaults) {
     });
 
     app.import('bower_components/ionicons/css/ionicons.min.css');
-    app.import('bower_components/ionicons/fonts/ionicons.eot', {
-        destDir: 'fonts'
-    });
-    app.import('bower_components/ionicons/fonts/ionicons.svg', {
-        destDir: 'fonts'
-    });
-    app.import('bower_components/ionicons/fonts/ionicons.ttf', {
-        destDir: 'fonts'
-    });
-    app.import('bower_components/ionicons/fonts/ionicons.woff', {
-        destDir: 'fonts'
-    });
+    // app.import('bower_components/ionicons/fonts/ionicons.eot', {
+    //     destDir: 'fonts'
+    // });
+    // app.import('bower_components/ionicons/fonts/ionicons.svg', {
+    //     destDir: 'fonts'
+    // });
+    // app.import('bower_components/ionicons/fonts/ionicons.ttf', {
+    //     destDir: 'fonts'
+    // });
+    // app.import('bower_components/ionicons/fonts/ionicons.woff', {
+    //     destDir: 'fonts'
+    // });
     // Use `app.import` to add additional libraries to the generated
     // output files.
     //

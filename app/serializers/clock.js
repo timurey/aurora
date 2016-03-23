@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-    normalizeFindAllResponse(store, type, payload) {
+    normalizeFindRecordResponse(store, type, payload) {
         return {
             'data': {
                 'type': 'clock',
@@ -16,5 +16,16 @@ export default DS.RESTSerializer.extend({
             }
 
         };
+    },
+      serialize(snapshot, options) {
+        var answer = {};
+        var json = this._super(...arguments);
+        console.log('json :', json);
+        answer.unixtime = json.unixtime;
+        answer.timezone = json.timezone;
+        answer.needSave = json.needSave;
+        console.log('answer :', answer);
+
+        return JSON.stringify(answer);
     }
 });

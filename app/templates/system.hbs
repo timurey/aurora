@@ -18,7 +18,8 @@
       <!-- Left col -->
       <section class="col-lg-6 connectedSortable ui-sortable">
 
-      {{ntp-box ntp = model.ntp}}
+      {{ntp-box ntp = model.ntp cancel='cancelNtpCanges' apply='applyNtpCanges' applyAndSave='applyAndSaveNtpCanges' updatePeriod ='updateNptPeriod'}}
+      {{clock-box clock = model.clock cancel='cancelClockCanges' apply='applyClockCanges' applyAndSave='applyAndSaveClockCanges' sync ='syncClock'}}
 
         <!-- row -->
       </section>

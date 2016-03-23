@@ -1,10 +1,10 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-	normalizeFindAllResponse(store, type, payload) {
+	normalizeFindRecordResponse(store, type, payload) {
     return {
     	data: {
-    		id: payload.uid,
+    		id: 0,
     		type: type.modelName,
     		attributes:{
     			load: payload.cpu.load,

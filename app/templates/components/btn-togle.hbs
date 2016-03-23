@@ -1,0 +1,4 @@
+<div class="btn-group" data-toggle="btn-toggle">
+	<button type="button" class="btn btn-default btn-sm {{if enable "active"}}" {{action "enableAct"}}><i class="fa fa-square text-green"></i></button>
+	<button type="button" class="btn btn-default btn-sm {{unless enable "active"}}" {{action "disableAct"}}><i class="fa fa-square text-red"></i></button>
+</div>

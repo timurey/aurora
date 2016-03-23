@@ -13,7 +13,7 @@ export default Ember.Component.extend({
             });
         },
         search(){
-            var filter = this.filter;
+            // var filter = this.filter;
         }
     }
 });

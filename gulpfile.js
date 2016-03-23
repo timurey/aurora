@@ -4,10 +4,10 @@ var ftp = require('vinyl-ftp');
 
 // Build the project using ember-cli
 gulp.task('build', shell.task([
-  'ember build --environment production --output-path to_ftp'
+  'ember build --environment production --output-path web'
 ]));
 gulp.task('cp',['build'], shell.task([
-  'cp to_ftp/index.html to_ftp/404.html'
+  'cp web/index.html web/404.html'
 ]));
 
 gulp.task('compress', ['cp'], shell.task('./gzip_all') );
@@ -45,7 +45,7 @@ gulp.task( 'ftp',['ftp_gzip'], function () {
     // using base = '.' will transfer everything to /public_html correctly
     // turn off buffering in gulp.src for best performance
 
-    return gulp.src('to_ftp/**/*' )
+    return gulp.src('web/**/*' )
         .pipe( conn.newerOrDifferentSize( '/web/' ) ) // only upload newer files
         .pipe( conn.dest( '/web/' ) );
 

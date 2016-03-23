@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # compress the files if they aren't
-find to_ftp -iname '*.html' -size +100c -exec gzip -fk {} \;
-find to_ftp -iname '*.htm' -size +100c -exec gzip -fk {} \;
-find to_ftp -iname '*.js' -size +100c -exec gzip -fk {} \;
-find to_ftp -iname '*.css' -size +100c -exec gzip -fk {} \;
-find to_ftp -iname '*.woff' -size +100c -exec gzip -fk {} \;
+find web -iname '*.html' -size +100c -exec gzip -fk {} \;
+find web -iname '*.htm' -size +100c -exec gzip -fk {} \;
+find web -iname '*.js' -size +100c -exec gzip -fk {} \;
+find web -iname '*.css' -size +100c -exec gzip -fk {} \;
+find web -iname '*.woff' -size +100c -exec gzip -fk {} \;
 
 #clean gziped directory and delete it
 find gziped -iname '*' -exec rm {} \;
@@ -15,15 +15,15 @@ find gziped -iname '*' -exec rmdir -p {} \;
 mkdir ./gziped
 
 #create directory gziped_tmp
-find to_ftp -type d | xargs -IZzZ mkdir -p gziped_tmp/ZzZ
+find web -type d | xargs -IZzZ mkdir -p gziped_tmp/ZzZ
 
 #copy all .gz files with saving direcotry structure
-find to_ftp -iname '*.gz' -exec cp -Rv {} gziped_tmp/{} \;
-#remove all *.gz files from to_ftp
-find to_ftp -iname '*.gz' -exec rm {} \;
+find web -iname '*.gz' -exec cp -Rv {} gziped_tmp/{} \;
+#remove all *.gz files from web
+find web -iname '*.gz' -exec rm {} \;
 
-mv gziped_tmp/to_ftp/* gziped
+mv gziped_tmp/web/* gziped
 
-rmdir gziped_tmp/to_ftp
+rmdir gziped_tmp/web
 rmdir gziped_tmp
 

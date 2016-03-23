@@ -150,7 +150,7 @@ export default function() {
         return { data: tests };
     });
     this.get('/rest/v1/ntp', function() {
-        let ntps = {"ntp_servers":["1.ru.pool.ntp.org","2.ru.pool.ntp.org","3.ru.pool.ntp.org",""],"timezone":"GMT+0500 (YEKT)","period":3600};
+        let ntps = {"servers":["1.ru.pool.ntp.org","2.ru.pool.ntp.org","3.ru.pool.ntp.org",""],"timezone":"GMT+0500 (YEKT)","period":3600, "enabled":true};
         // let ntps = {'data':[{'type':'ntp','id':0,'attributes':{'address':'1.ru.pool.ntp.org'}},{'type':'ntp','id':1,'attributes':{'address':'2.ru.pool.ntp.org'}},{'type':'ntp','id':2,'attributes':{'address':'3.ru.pool.ntp.org'}}],'meta':{'period':3600,'timezone':'GMT+0500 (YEKT)'}};
         return ntps;
     });

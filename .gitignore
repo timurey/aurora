@@ -3,7 +3,7 @@
 # compiled output
 /dist
 /tmp
-/to_ftp
+/web
 /gziped
 
 # dependencies
