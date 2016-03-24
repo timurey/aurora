@@ -3,9 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model() {
         return Ember.RSVP.hash({
-            ntp: this.store.findRecord('ntp', 0),
-            clock: this.store.findRecord('clock', 0)
-
+            ntp: this.store.findRecord('ntp', 0)
         });
     },
 

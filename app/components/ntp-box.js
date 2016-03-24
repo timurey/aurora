@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     afterRenderEvent: function() {
         var value = this;
 
-        $(".timepicker").timepicker({
+        Ember.$(".timepicker").timepicker({
 
             showInputs: false,
             icons: {
@@ -25,8 +25,8 @@ export default Ember.Component.extend({
 
         // let period = ntp.period;
         // console.log('period :' + period + ' , HHMMSS :' + period.toHHMMSS())
-        $('#timepicker').timepicker();
-        $('#timepicker').timepicker().on('changeTime.timepicker', function(e) {
+        Ember.$('#timepicker').timepicker();
+        Ember.$('#timepicker').timepicker().on('changeTime.timepicker', function(e) {
             value.sendAction('updatePeriod', e);
 
         });
