@@ -8,5 +8,9 @@ export default DS.Model.extend({
     heap: DS.attr('number'),
     free: DS.attr('number'),
     usage: DS.attr('number'),
-    uid: DS.attr('string')
+    uid: DS.attr('string'),
+    didLoad: function() {
+        var self = this;
+        setInterval(function() { self.reload(); }, 5 * 1000); //every 5 minutes
+    }
 });

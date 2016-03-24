@@ -11,9 +11,10 @@ export default DS.Model.extend({
         return `${this.get('date')} ${this.get('time')}`;
 
     }),
-    loadedAt: function() {
-        this.set('loadedAt', new Date());
-    }.on('didLoad'),
-    needSave: DS.attr('boolean', { defaultValue: false })
+    needSave: DS.attr('boolean', { defaultValue: false }),
+    didLoad: function() {
+        var self = this;
+        setInterval(function() { self.reload(); }, 1 * 1000); //every 1 seconds
+    }
 
 });
