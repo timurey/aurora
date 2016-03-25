@@ -14,7 +14,9 @@ module.exports = function(defaults) {
     app.import("bower_components/jquery/dist/jquery.min.js");
     app.import('bower_components/AdminLTE/bootstrap/css/bootstrap.css');
     app.import('bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css');
-    app.import('bower_components/AdminLTE/dist/css/AdminLTE.css');
+    // app.import('bower_components/AdminLTE/dist/css/AdminLTE.css');
+    app.import('vendor/AdminLTE/dist/css/AdminLTE.css');
+    app.import('vendor/AdminLTE/dist/css/fonts.css');
     app.import('bower_components/AdminLTE/dist/css/skins/_all-skins.css');
     // app.import('bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js');
 
@@ -57,6 +59,112 @@ module.exports = function(defaults) {
     // app.import('bower_components/ionicons/fonts/ionicons.woff', {
     //     destDir: 'fonts'
     // });
+
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.eot', {
+        destDir: 'fonts/Source-Sans-Pro-300/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.svg', {
+        destDir: 'fonts/Source-Sans-Pro-300/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-300/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.woff', {
+        destDir: 'fonts/Source-Sans-Pro-300/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-300/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300italic/Source-Sans-Pro-300italic.eot', {
+        destDir: 'fonts/Source-Sans-Pro-300italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300italic/Source-Sans-Pro-300italic.svg', {
+        destDir: 'fonts/Source-Sans-Pro-300italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300italic/Source-Sans-Pro-300italic.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-300italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300italic/Source-Sans-Pro-300italic.woff', {
+        destDir: 'fonts/Source-Sans-Pro-300italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300italic/Source-Sans-Pro-300italic.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-300italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600/Source-Sans-Pro-600.eot', {
+        destDir: 'fonts/Source-Sans-Pro-600/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600/Source-Sans-Pro-600.svg', {
+        destDir: 'fonts/Source-Sans-Pro-600/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600/Source-Sans-Pro-600.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-600/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600/Source-Sans-Pro-600.woff', {
+        destDir: 'fonts/Source-Sans-Pro-600/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600/Source-Sans-Pro-600.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-600/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600italic/Source-Sans-Pro-600italic.eot', {
+        destDir: 'fonts/Source-Sans-Pro-600italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600italic/Source-Sans-Pro-600italic.svg', {
+        destDir: 'fonts/Source-Sans-Pro-600italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600italic/Source-Sans-Pro-600italic.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-600italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600italic/Source-Sans-Pro-600italic.woff', {
+        destDir: 'fonts/Source-Sans-Pro-600italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-600italic/Source-Sans-Pro-600italic.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-600italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-700/Source-Sans-Pro-700.eot', {
+        destDir: 'fonts/Source-Sans-Pro-700/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-700/Source-Sans-Pro-700.svg', {
+        destDir: 'fonts/Source-Sans-Pro-700/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-700/Source-Sans-Pro-700.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-700/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-700/Source-Sans-Pro-700.woff', {
+        destDir: 'fonts/Source-Sans-Pro-700/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-700/Source-Sans-Pro-700.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-700/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-italic/Source-Sans-Pro-italic.eot', {
+        destDir: 'fonts/Source-Sans-Pro-italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-italic/Source-Sans-Pro-italic.svg', {
+        destDir: 'fonts/Source-Sans-Pro-italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-italic/Source-Sans-Pro-italic.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-italic/Source-Sans-Pro-italic.woff', {
+        destDir: 'fonts/Source-Sans-Pro-italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-italic/Source-Sans-Pro-italic.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-italic/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-regular/Source-Sans-Pro-regular.eot', {
+        destDir: 'fonts/Source-Sans-Pro-regular/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-regular/Source-Sans-Pro-regular.svg', {
+        destDir: 'fonts/Source-Sans-Pro-regular/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-regular/Source-Sans-Pro-regular.ttf', {
+        destDir: 'fonts/Source-Sans-Pro-regular/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-regular/Source-Sans-Pro-regular.woff', {
+        destDir: 'fonts/Source-Sans-Pro-regular/'
+    });
+    app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-regular/Source-Sans-Pro-regular.woff2', {
+        destDir: 'fonts/Source-Sans-Pro-regular/'
+    });
     // Use `app.import` to add additional libraries to the generated
     // output files.
     //

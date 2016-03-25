@@ -11,11 +11,11 @@ export default Ember.Component.extend({
    * INITIALIZE BUTTON TOGGLE
    * ------------------------
    */
-  Ember.$('.btn-group[data-toggle="btn-toggle"]').each(function () {
-    var group = Ember.$(this);
-    Ember.$(this).find(".btn").on('click', function (e) {
+  $('.btn-group[data-toggle="btn-toggle"]').each(function () {
+    var group = $(this);
+    $(this).find(".btn").on('click', function (e) {
       group.find(".btn.active").removeClass("active");
-      Ember.$(this).addClass("active");
+      $(this).addClass("active");
       e.preventDefault();
     });
 

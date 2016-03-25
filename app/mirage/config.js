@@ -150,17 +150,20 @@ export default function() {
         return { data: tests };
     });
     this.get('/rest/v1/ntp', function() {
-        let ntps = {"servers":["1.ru.pool.ntp.org","2.ru.pool.ntp.org","3.ru.pool.ntp.org",""],"timezone":"GMT+0500 (YEKT)","period":3600, "enabled":true};
+        let ntps = { "servers": ["1.ru.pool.ntp.org", "2.ru.pool.ntp.org", "3.ru.pool.ntp.org", ""], "timezone": "GMT+0500 (YEKT)", "period": 3600, "enabled": true };
         // let ntps = {'data':[{'type':'ntp','id':0,'attributes':{'address':'1.ru.pool.ntp.org'}},{'type':'ntp','id':1,'attributes':{'address':'2.ru.pool.ntp.org'}},{'type':'ntp','id':2,'attributes':{'address':'3.ru.pool.ntp.org'}}],'meta':{'period':3600,'timezone':'GMT+0500 (YEKT)'}};
         return ntps;
     });
-        this.get('/rest/v1/clock', function() {
+    this.get('/rest/v1/clock', function() {
         // let clock = {'data':{'type':'clock', 'id':0,'attributes':{'unixtime':1458150371,'localtime':'Wed Mar 16 2016 17:46:11 GMT+0500 (YEKT)','time':'17:46:11','date':'2016.03.16','timezone':'GMT+0500 (YEKT)'}}};
-        let clock = {"clock":{"unixtime":1458149124,"localtime":"Wed Mar 16 2016 17:25:24 GMT+0500 (YEKT)","time":"17:25:24","date":"2016.03.16","timezone":"GMT+0500 (YEKT)"}};
+        let clock = { "clock": { "unixtime": 1458149124, "localtime": "Wed Mar 16 2016 17:25:24 GMT+0500 (YEKT)", "time": "17:25:24", "date": "2016.03.16", "timezone": "GMT+0500 (YEKT)" } };
         return clock;
     });
-
-    // These comments are here to help you get started. Feel free to delete them.
+    this.get('/rest/v1/network', function() {
+            let network = { "ipv4": { "useipv4": true, "usedhcp": true, "address": "192.168.2.15", "netmask": "255.255.255.0", "gateway": "192.168.2.1", "primarydns": "192.168.2.1", "secondarydns": "0.0.0.0" } };
+            return network;
+        })
+        // These comments are here to help you get started. Feel free to delete them.
 
     /*
       Config (with defaults).

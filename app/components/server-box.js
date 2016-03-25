@@ -7,14 +7,14 @@ export default Ember.Component.extend({
     },
 
     afterRenderEvent: function() {
-        Ember.$(".connectedSortable").sortable({
+        $(".connectedSortable").sortable({
             placeholder: "sort-highlight",
             connectWith: ".connectedSortable",
             handle: ".box-header, .nav-tabs",
             forcePlaceholderSize: true,
             zIndex: 999999
         });
-        Ember.$(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
+        $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
 
     },
     willDestroyElement() {
