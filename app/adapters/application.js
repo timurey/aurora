@@ -6,6 +6,7 @@ inflector.uncountable('restapi');
 inflector.uncountable('cpu');
 inflector.uncountable('ntp');
 inflector.uncountable('clock');
+inflector.uncountable('network');
 
 export default DS.RESTAdapter.extend({
   namespace: 'rest/v1',

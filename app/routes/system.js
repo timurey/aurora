@@ -4,7 +4,8 @@ export default Ember.Route.extend({
     model() {
         return Ember.RSVP.hash({
             clock: this.store.findRecord('clock', 0),
-            ntp: this.store.findRecord('ntp', 0)
+            ntp: this.store.findRecord('ntp', 0),
+            network: this.store.findRecord('network', 0)
         });
     },
 
@@ -60,6 +61,23 @@ export default Ember.Route.extend({
             answer.set('timezone', timezone);
             this.controller.get('model.clock').save();
         },
+
+        cancelIpV4Canges() {
+            this.controller.get('model.network').rollbackAttributes();
+        },
+        applyIpV4Canges() {
+            console.log('apply:');
+            let answer = this.store.peekRecord('network', 0);
+            answer.set('needSave', false);
+            this.controller.get('model.network').save();
+        },
+        applyAndSaveIpV4Canges() {
+            console.log('apply and save:');
+            let answer = this.store.peekRecord('network', 0);
+            answer.set('needSave', true);
+            this.controller.get('model.network').save();
+        },
+
 
     }
 });

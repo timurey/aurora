@@ -17,13 +17,13 @@
     <div class="row">
       <!-- Left col -->
       <section class="col-lg-6 connectedSortable ui-sortable">
-
-      {{ntp-box ntp = model.ntp cancel='cancelNtpCanges' apply='applyNtpCanges' applyAndSave='applyAndSaveNtpCanges' updatePeriod ='updateNptPeriod'}}
-      {{clock-box clock = model.clock cancel='cancelClockCanges' apply='applyClockCanges' applyAndSave='applyAndSaveClockCanges' sync ='syncClock'}}
-
+        {{ntp-box ntp = model.ntp cancel='cancelNtpCanges' apply='applyNtpCanges' applyAndSave='applyAndSaveNtpCanges' updatePeriod ='updateNptPeriod'}}
+        {{clock-box clock = model.clock cancel='cancelClockCanges' apply='applyClockCanges' applyAndSave='applyAndSaveClockCanges' sync ='syncClock'}}
         <!-- row -->
       </section>
-
+      <section class="col-lg-6 connectedSortable ui-sortable">
+        {{ipv4-box network = model.network cancel='cancelIpV4Canges' apply='applyIpV4Canges' applyAndSave='applyAndSaveIpV4Canges'}}
+      </section>
     </div>
   </section>
   <!-- /.content -->

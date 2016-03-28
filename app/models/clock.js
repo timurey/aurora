@@ -12,9 +12,9 @@ export default DS.Model.extend({
 
     }),
     needSave: DS.attr('boolean', { defaultValue: false }),
-    didLoad: function() {
-        var self = this;
-        setInterval(function() { self.reload(); }, 1 * 1000); //every 1 seconds
-    }
+    // didLoad: function() {
+    //     var self = this;
+    //     setInterval(function() { self.reload(); }, 1 * 1000); //every 1 seconds
+    // }
 
 });
