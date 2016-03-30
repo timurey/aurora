@@ -1,11 +1,23 @@
-<div class="row">
-  <div class="col-xs-6 col-md-4">
-      {{#statistics-box name="Foo Bar" color="aqua" icon="fa fa-github-alt"}}100%{{/statistics-box}}
-  </div>
-  <div class="col-xs-6 col-md-4">
-      {{#statistics-box name="Rebels" color="yellow" icon="fa fa-rebel"}}1210{{/statistics-box}}
-  </div>
-  <div class="col-xs-6 col-md-4">
-      {{#statistics-box name="Stormtroopers" color="green" icon="fa fa-empire"}}11{{/statistics-box}}
-  </div>
-</div>
+<section class="content-header">
+      <h1>
+        Widgets
+        <small>Preview page</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Widgets</li>
+      </ol>
+</section>
+<section class="content">
+	<div class="row">
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			{{#statistics-box name="MCU usage" progress = "{{data.load}}" color="aqua" icon="ion ion-ios-speedometer-outline" description="MCU usage"}}{{data.load}}&deg;{{/statistics-box}}
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			{{#statistics-box name="Memory usage" color="yellow" progress="{{data.usage_percent}}" icon="ion ion-ios-speedometer" description="Memory usage"}}{{data.usage_percent}}{{/statistics-box}}
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			{{#statistics-box name="MCU temperature" color="green" icon="fa ion-thermometer" description="MCU temperature"}}{{data.temperature }}°{{/statistics-box}}
+		</div>
+	</div>
+</section>

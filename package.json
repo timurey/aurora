@@ -51,6 +51,7 @@
     "vinyl-ftp": "^0.4.5"
   },
   "dependencies": {
+    "ember-cli-knob": "^0.1.2",
     "ember-inflector": "^1.9.4"
   }
 }

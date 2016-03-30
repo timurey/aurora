@@ -1,0 +1,17 @@
+
+	<div class="info-box bg-{{color}}">
+	  <span class="info-box-icon "><i class="{{icon}}"></i></span>
+	  <div class="info-box-content">
+	    <span class="info-box-text">{{name}}</span>
+
+	    <span class="info-box-number">{{yield}}</span>
+	    {{#if progress}}
+	    <div class="progress">
+			<div class="progress-bar" style="width: {{progress}}%"></div>
+        </div>
+        {{/if}}
+        {{#if description}}
+        <span class="progress-description">{{description}}</span>
+        {{/if}}
+	  </div>
+	</div>

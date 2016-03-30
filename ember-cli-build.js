@@ -47,18 +47,18 @@ module.exports = function(defaults) {
     });
 
     app.import('bower_components/ionicons/css/ionicons.min.css');
-    // app.import('bower_components/ionicons/fonts/ionicons.eot', {
-    //     destDir: 'fonts'
-    // });
-    // app.import('bower_components/ionicons/fonts/ionicons.svg', {
-    //     destDir: 'fonts'
-    // });
-    // app.import('bower_components/ionicons/fonts/ionicons.ttf', {
-    //     destDir: 'fonts'
-    // });
-    // app.import('bower_components/ionicons/fonts/ionicons.woff', {
-    //     destDir: 'fonts'
-    // });
+    app.import('bower_components/ionicons/fonts/ionicons.eot', {
+        destDir: 'fonts'
+    });
+    app.import('bower_components/ionicons/fonts/ionicons.svg', {
+        destDir: 'fonts'
+    });
+    app.import('bower_components/ionicons/fonts/ionicons.ttf', {
+        destDir: 'fonts'
+    });
+    app.import('bower_components/ionicons/fonts/ionicons.woff', {
+        destDir: 'fonts'
+    });
 
     app.import('vendor/AdminLTE/dist/fonts/Source-Sans-Pro-300/Source-Sans-Pro-300.eot', {
         destDir: 'fonts/Source-Sans-Pro-300/'

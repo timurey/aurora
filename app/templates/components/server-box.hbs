@@ -16,73 +16,79 @@
       <!-- /.box-header -->
       <div class="box-body">
         <div class="row">
-          <div class="col-xs-6 col-md-3 text-center">
-          <div>
-          {{ui-knob
+          <div class="col-xs-4 col-md-4 col-sm-4 text-center">
+          {{ember-knob
              value= data.load 
-             min='0' 
-             max='100' 
-             width='90' 
-             height='90' 
-             thickness='0.35' 
-             angleOffset='-125' 
-             angleArc='250' 
+             min="0" 
+             max="100" 
+             width="90" 
+             height="90" 
+             thickness="0.35" 
+             angleOffset="-125" 
+             angleArc="250" 
              cursor=false 
              stopper=false 
-             displayInput=true 
+             displayInput=false 
              displayPrevious=false 
-             lineCap='round' 
+             lineCap="round" 
              readOnly=true 
-             fgColor='#3c8dbc' 
-             bgColor='#EFEEEE' 
+             fgColor="#3c8dbc" 
+             bgColor="#EFEEEE" 
         }}
+            
+            <div class="knob-label">
+            CPU usage
             </div>
-            <div class="knob-label">CPU usage</div>
           </div>
           <!-- ./col -->
-          <div class="col-xs-6 col-md-3 text-center">
-        {{ui-knob 
+          <div class="col-xs-4 col-md-4 col-sm-4 text-center">
+          
+        {{ember-knob
              value= data.usage
-             min='0' 
+             min="0" 
              max=data.heap 
-             width='90' 
-             height='90' 
-             thickness='0.35' 
-             angleOffset='-125' 
-             angleArc='250' 
+             width="90" 
+             height="90" 
+             thickness="0.35" 
+             angleOffset="-125" 
+             angleArc="250"
              cursor=false 
              stopper=false 
-             displayInput=true 
+             displayInput=false 
              displayPrevious=false 
-             lineCap='round' 
+             lineCap="round"
              readOnly=true 
-             fgColor='#f56954' 
-             bgColor='#EFEEEE' 
+             fgColor="#f56954" 
+             bgColor="#EFEEEE" 
         }}
-            <div class="knob-label">Memory usage</div>
+            <div class="knob-label">
+            Memory usage
+            </div>
           </div>
           <!-- ./col -->
-          <div class="col-xs-6 col-md-3 text-center">
-        {{ui-knob 
+          <div class="col-xs-4 col-md-4 col-sm-4 text-center">
+        {{ember-knob
              value= data.temperature 
-             min='0' 
-             max='100' 
-             width='90' 
-             height='90' 
-             thickness='0.35' 
-             angleOffset='-125' 
-             angleArc='250' 
+             min="0" 
+             max="100" 
+             width="90" 
+             height="90" 
+             thickness="0.35" 
+             angleOffset="-125" 
+             angleArc="250" 
              cursor=false 
              stopper=false 
              displayInput=true 
              displayPrevious=false 
-             lineCap='round' 
+             lineCap="round" 
              readOnly=true 
-             fgColor='#f56954' 
-             bgColor='#EFEEEE' 
+             inputColor="#f56954" 
+             fgColor="#f56954" 
+             bgColor="#EFEEEE" 
         }}          
-            {{!-- <input type="text" id="cpu_temperature_knob" data-linecap=round class="knob" value="{{data.temperature}}" data-width="90" data-height="90" data-angleArc="250" data-angleOffset="-125" data-fgColor="#f56954" data-readOnly=true> --}}
-            <div class="knob-label">MCU temperature</div>
+            <div class="knob-label">
+            MCU temperature
+            </div>
           </div>
           <!-- ./col -->
         </div>
