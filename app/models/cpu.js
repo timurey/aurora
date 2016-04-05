@@ -10,11 +10,11 @@ export default DS.Model.extend({
     usage: DS.attr('number'),
     uid: DS.attr('string'),
     usage_percent: Ember.computed('usage', 'heap', function() {
-        return Math.floor(this.get('usage') / this.get('heap') * 100);
+        return Ember.String.htmlSafe(Math.floor(this.get('usage') / this.get('heap') * 100));
 
     }),
-    didLoad: function() {
-        var self = this;
-        setInterval(function() { self.reload(); }, 5 * 1000); //every 5 minutes
-    }
+    // didLoad: function() {
+    //     var self = this;
+    //     setInterval(function() { self.reload(); }, 5 * 1000); //every 5 minutes
+    // }
 });

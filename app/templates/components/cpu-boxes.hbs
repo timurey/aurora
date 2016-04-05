@@ -1,12 +1,12 @@
 <div class="row">
-		<div class="col-md-4 col-sm-6 col-xs-12">
+ 		<div class="col-md-4 col-sm-6 col-xs-12">
 			{{#alte-components/info-box name="MCU usage" progress = data.load color="aqua" icon="ion ion-ios-speedometer-outline" description="MCU usage"}}{{data.load}}%{{/alte-components/info-box}}
 		</div>
 		<div class="col-md-4 col-sm-6 col-xs-12">
 			{{#alte-components/info-box name="Memory usage" color="yellow" progress=data.usage_percent icon="ion ion-ios-speedometer" description="Memory usage"}}{{data.usage_percent}}%{{/alte-components/info-box}}
-		</div>
+		</div> 
 		<div class="col-md-4 col-sm-6 col-xs-12">
-			{{#alte-components/info-box name="MCU temperature" color="green" icon="fa ion-thermometer" description="MCU temperature"}}{{data.temperature }}°{{/alte-components/info-box}}
+			{{#alte-components/info-box name="MCU temperature" color="green" icon="fa ion-thermometer" description="MCU temperature"}}{{data.temperature }}&deg;{{/alte-components/info-box}}
 		</div>
 		<div class="col-md-4 col-sm-6 col-xs-12">
 			{{#alte-components/info-box color="green" icon="fa ion-pound" name = "uid" description=data.uid }} {{/alte-components/info-box}}

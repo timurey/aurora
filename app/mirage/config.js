@@ -160,14 +160,14 @@ export default function() {
         return clock;
     });
     this.get('/rest/v1/network', function() {
-            let network = { "ipv4": { "useipv4": true, "usedhcp": true, "address": "192.168.2.15", "netmask": "255.255.255.0", "gateway": "192.168.2.1", "primarydns": "192.168.2.1", "secondarydns": "0.0.0.0" } };
-            return network;
-        });
-    this.get('rest/v1/sensors/temperature', function(){
-        let temperature = {"temperature":[ {"id":0,"name":"Температура воздуха","place":"room","value":"26.7","serial":"28:3A:CF:7B:04:00:00:D3","health":100,"online":true},{"id":1,"name":"air","place":"kitchen","value":"0.0","serial":"10:86:85:9E:02:08:00:77","health":0,"online":false},{"id":2,"name":"hot water","place":"bath room","value":"0.0","serial":"28:A7:74:7C:04:00:00:91","health":0,"online":false}]};
+        let network = { "ipv4": { "useipv4": true, "usedhcp": true, "address": "192.168.2.15", "netmask": "255.255.255.0", "gateway": "192.168.2.1", "primarydns": "192.168.2.1", "secondarydns": "0.0.0.0" } };
+        return network;
+    });
+    this.get('rest/v1/sensors/temperature', function() {
+        let temperature = { "temperature": [{ "id": 0, "name": "Температура воздуха", "place": "room", "value": "26.7", "serial": "28:3A:CF:7B:04:00:00:D3", "health": 100, "online": true }, { "id": 1, "name": "air", "place": "kitchen", "value": "0.0", "serial": "10:86:85:9E:02:08:00:77", "health": 0, "online": false }, { "id": 2, "name": "hot water", "place": "bath room", "value": "0.0", "serial": "28:A7:74:7C:04:00:00:91", "health": 0, "online": false }] };
         return temperature;
-    })
-        // These comments are here to help you get started. Feel free to delete them.
+    });
+    // These comments are here to help you get started. Feel free to delete them.
 
     /*
       Config (with defaults).
