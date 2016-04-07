@@ -1,10 +1,11 @@
+import ApplicationAdapter from './application';
 import DS from 'ember-data';
 import Ember from 'ember';
 var inflector = Ember.Inflector.inflector;
 
 inflector.uncountable('cpu');
 
-export default DS.RESTAdapter.extend({
+export default ApplicationAdapter.extend({
     namespace: 'rest/v1',
     // host: 'http://stm32_1.local'
     findRecord: function(store, type, id, snapshot) {

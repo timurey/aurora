@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+import ApplicationAdapter from './application';
 
-export default DS.RESTAdapter.extend({
+export default ApplicationAdapter.extend({
   namespace: 'rest/v1',
   // host: 'http://stm32_1.local'
   findRecord: function(store, type, id, snapshot) {

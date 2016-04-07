@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+    <!-- jQuery Knob -->
+    <div class="box box-solid">
+      <div class="box-header">
+        <i class="fa fa-bar-chart-o"></i>
+        <h3 class="box-title">Temperature</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body no-padding">
+    <div>
+        <table class="table">
+        <tbody>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Place</th>
+                <th>Name</th>
+                <th style="width:180px"></th>
+                <th style="width: 40px">Value</th>
+            </tr>
+            {{#each temperatures as |temperature|}}
+            {{!-- <tr data-toggle="tooltip" title="{{temperature.serial}}"> --}}
+            <tr>
+            <td>{{temperature.id}}.</td>
+            <td>{{temperature.place}}</td>
+            <td>{{temperature.name}}</td>
+            <td>
+                <div class="progress progress-xs">
+                    <div class="progress-bar progress-bar-danger" style="width: {{temperature.value}}%"></div>
+                </div>
+            </td>
+            <td><span class="badge bg-red">{{temperature.value}}&deg;</span></td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+      </div>
+      <!-- /.box-body -->
+     <div class="box-footer">
+     </div>
+        <!-- /.box-footer-->
+    </div>
+    <!-- /.box -->
+  </div>
+  <!-- /.col -->
+</div>
+<!-- /.row -->

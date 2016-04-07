@@ -6,10 +6,6 @@ export default function() {
                 'id': 1,
                 'attributes': {
                     'type': 'clock',
-                    'read': true,
-                    'create': true,
-                    'update': true,
-                    'delete': true,
                     'links': {
                         'self': '/rest/v1/clock'
                     }
@@ -22,10 +18,6 @@ export default function() {
                         'self': '/rest/v1/cpu'
                     },
                     'type': 'cpu',
-                    'read': true,
-                    'create': false,
-                    'update': false,
-                    'delete': false
                 }
             }, {
                 'type': 'restapi',
@@ -35,10 +27,7 @@ export default function() {
                         'self': '/rest/v1/executors'
                     },
                     'type': 'executors',
-                    'read': true,
-                    'create': true,
-                    'update': true,
-                    'delete': true
+
                 }
             }, {
                 'type': 'restapi',
@@ -48,10 +37,6 @@ export default function() {
                         'self': '/rest/v1/onewire'
                     },
                     'type': 'onewire',
-                    'read': true,
-                    'create': false,
-                    'update': false,
-                    'delete': false
                 }
             }, {
                 'type': 'restapi',
@@ -61,10 +46,6 @@ export default function() {
                         'self': '/rest/v1/restapi'
                     },
                     'type': 'restapi',
-                    'read': true,
-                    'create': false,
-                    'update': false,
-                    'delete': false
                 }
             }, {
                 'type': 'restapi',
@@ -74,10 +55,6 @@ export default function() {
                         'self': '/rest/v1/test'
                     },
                     'type': 'test_rest',
-                    'read': false,
-                    'create': false,
-                    'update': false,
-                    'delete': false
                 }
             }, {
                 'type': 'restapi',
@@ -87,10 +64,6 @@ export default function() {
                         'self': '/rest/v1/sensors'
                     },
                     'type': 'sensors',
-                    'read': true,
-                    'create': true,
-                    'update': true,
-                    'delete': true
                 }
             }, {
                 'type': 'restapi',
@@ -100,10 +73,6 @@ export default function() {
                         'self': '/rest/v1/variables'
                     },
                     'type': 'variables',
-                    'read': true,
-                    'create': true,
-                    'update': true,
-                    'delete': true
                 }
             }, {
                 'type': 'restapi',
@@ -113,10 +82,6 @@ export default function() {
                         'self': '/rest/v1/ntp'
                     },
                     'type': 'ntp',
-                    'read': true,
-                    'create': true,
-                    'update': true,
-                    'delete': true
                 }
             }]
         }
@@ -163,12 +128,48 @@ export default function() {
         let network = { "ipv4": { "useipv4": true, "usedhcp": true, "address": "192.168.2.15", "netmask": "255.255.255.0", "gateway": "192.168.2.1", "primarydns": "192.168.2.1", "secondarydns": "0.0.0.0" } };
         return network;
     });
-    this.get('rest/v1/sensors/temperature', function() {
+    this.get('/rest/v2/sensors', function() {
+        let sensors = {
+            "data": {
+                "type": "sensors",
+                "id": 0,
+                // "attributes": {
+                //     // "id": 0,
+                //     // "name": "sensors"
+                // },
+                "relationships": {
+                    "temperature": {
+                        "links": {
+                            "related": "/rest/v2/sensors/temperature"
+                        }
+                    },
+                    "inputs": {
+                        "links": {
+                            "related": "/rest/v2/sensors/inputs"
+                        }
+                    }
+                }
+            }
+
+        };
+        return sensors;
+    });
+    this.get('/rest/v1/sensors/temperature', function() {
         let temperature = { "temperature": [{ "id": 0, "name": "Температура воздуха", "place": "room", "value": "26.7", "serial": "28:3A:CF:7B:04:00:00:D3", "health": 100, "online": true }, { "id": 1, "name": "air", "place": "kitchen", "value": "0.0", "serial": "10:86:85:9E:02:08:00:77", "health": 0, "online": false }, { "id": 2, "name": "hot water", "place": "bath room", "value": "0.0", "serial": "28:A7:74:7C:04:00:00:91", "health": 0, "online": false }] };
         return temperature;
     });
-    // These comments are here to help you get started. Feel free to delete them.
-
+    this.get('/rest/v2/sensors/temperature', function() {
+        let temperature = { "data": [{ "type": "temperature", "id": 0, "attributes": { "name": "Температура воздуха", "place": "room", "value": "24.0", "serial": "28:3A:CF:7B:04:00:00:D3", "health": 100, "online": true } }, { "type": "temperature", "id": 1, "attributes": { "name": "air", "place": "kitchen", "value": "0.0", "serial": "10:86:85:9E:02:08:00:77", "health": 92, "online": false } }, { "type": "temperature", "id": 2, "attributes": { "name": "hot water", "place": "bath room", "value": "0.0", "serial": "28:A7:74:7C:04:00:00:91", "health": 92, "online": false } }] };
+        return temperature;
+    });
+    this.get('/rest/v2/sensors/inputs', function(){
+        let inputs = {"data":[{"type":"inputs","id":0,"attributes":{"name":"bath is full","place":"bath","type":"digital","value":false,"serial":"34:51:0D:31:32:39:32:05","online":true}},{"type":"inputs","id":1,"attributes":{"name":"door is opened","place":"room","type":"sequential","value":"0x00","serial":"34:51:0D:31:32:39:32:06","online":true}},{"type":"inputs","id":2,"attributes":{"name":"light dimmer","place":"bedroom","type":"dimmer","value":0,"serial":"34:51:0D:31:32:39:32:04","online":true}},{"type":"inputs","id":3,"attributes":{"name":"water level","place":"bath","type":"analog","value":1219,"serial":"34:51:0D:31:32:39:32:00","online":true}}]};
+        return inputs;
+    });
+this.get('/rest/v1/sensors/inputs', function(){
+        let inputs = {"inputs":[ {"id":0,"name":"bath is full","place":"bath","type":"digital","value":false,"serial":"34:51:0D:31:32:39:32:05","online":true},{"id":1,"name":"door is opened","place":"room","type":"sequential","value":"0x00","serial":"34:51:0D:31:32:39:32:06","online":true},{"id":2,"name":"light dimmer","place":"bedroom","type":"dimmer","value":0,"serial":"34:51:0D:31:32:39:32:04","online":true},{"id":3,"name":"water level","place":"bath","type":"analog","value":1225,"serial":"34:51:0D:31:32:39:32:00","online":true}]};
+        return inputs;
+    });
     /*
       Config (with defaults).
 
