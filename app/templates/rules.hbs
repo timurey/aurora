@@ -1,0 +1,24 @@
+<section class="content-header">
+      <h1>
+        Автоматизация
+        <small>Правила</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li>{{#link-to "index"}}<i class="fa fa-dashboard"></i>Главная{{/link-to}}</li>
+        <li class="active">{{#link-to "rules"}}Правила{{/link-to}}</li>
+      </ol>
+</section>
+<section class="content">
+	<div>
+		<ul>
+		{{#each model.rule as |rule|}}
+			<li>{{rule.name}}</li>
+		{{/each}}
+		</ul>
+	</div>
+	<div>
+	{{outlet}}
+	</div>
+</section>
+
+

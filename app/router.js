@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('test');
   this.route('fourOhFour', { path: "*path"});
   this.route('system');
+  this.route('rules');
 });
 
 export default Router;

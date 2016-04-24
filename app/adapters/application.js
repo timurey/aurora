@@ -10,6 +10,7 @@ inflector.uncountable('network');
 inflector.uncountable('sensors');
 inflector.uncountable('temperature');
 inflector.uncountable('input');
+inflector.uncountable('rules');
 
 export default DS.JSONAPIAdapter.extend({
     namespace: 'rest/v1',
