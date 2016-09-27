@@ -1,17 +1,17 @@
-import DS from 'ember-data';
-import Ember from 'ember';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-    'unixtime': DS.attr('number'),
-    'localtime': DS.attr('string'),
-    'time': DS.attr('string'),
-    'date': DS.attr('string'),
-    'timezone': DS.attr('string'),
+export default Model.extend({
+    'unixtime': attr('number'),
+    'localtime': attr('string'),
+    'time': attr('string'),
+    'date': attr('string'),
+    'timezone': attr('string'),
     'date_and_time': Ember.computed('date', 'time', function() {
         return `${this.get('date')} ${this.get('time')}`;
 
     }),
-    needSave: DS.attr('boolean', { defaultValue: false }),
+    needSave: attr('boolean', { defaultValue: false }),
     // didLoad: function() {
     //     var self = this;
     //     setInterval(function() { self.reload(); }, 1 * 1000); //every 1 seconds

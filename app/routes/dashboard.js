@@ -5,12 +5,8 @@ export default Ember.Route.extend({
     model() {
         return Ember.RSVP.hash({
             cpu: this.store.findRecord('cpu', 0),
-            sensors: this.store.findRecord('sensors',0)
+            sensor: this.store.findAll('sensor')
         });
     }
-      
-    //   afterModel(model) {
-    //   console.log(model); // 0
-    // }
 
 });

@@ -129,7 +129,7 @@ export default function() {
         return network;
     });
     this.get('/rest/v2/sensors', function() {
-        let sensors = {"data":{"type":"sensors","id":0,"relationships":{"generic":{"links":{"related":"/rest/v2/sensors/generic"}},"digital":{"links":{"related":"/rest/v2/sensors/digital"}},"dimmer":{"links":{"related":"/rest/v2/sensors/dimmer"}},"temperature":{"links":{"related":"/rest/v2/sensors/temperature"}},"water level":{"links":{"related":"/rest/v2/sensors/water level"}},"sequential":{"links":{"related":"/rest/v2/sensors/sequential"}},"scene":{"links":{"related":"/rest/v2/sensors/scene"}},"multimeter":{"links":{"related":"/rest/v2/sensors/multimeter"}}}}};
+        let sensors = {"data":[{"type":"sensor","id":"test_7","attributes":{"type":"temperature","name":"Температураводы","place":"Аквариум","value":6.0,"online":true,"parameters":[{"name":"active","value":true}]}},{"type":"sensor","id":"gpio_5","attributes":{"type":"temperature","name":"voltage","place":"scheme","value":3291,"online":true,"min":0,"max":3300,"parameters":[{"name":"active","value":true},{"name":"mode","value":"multimeter"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"},{"name":"formula","value":"(3300*x)/4096"}]}},{"type":"sensor","id":"gpio_10","attributes":{"type":"water level","name":"bath is full","place":"bath","value":0,"online":true,"min":0,"max":1,"parameters":[{"name":"active","value":true},{"name":"mode","value":"digital"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"}]}},{"type":"sensor","id":"gpio_4","attributes":{"type":"dimmer","name":"light dimmer","place":"bedroom","value":0,"online":true,"min":0,"max":100,"parameters":[{"name":"active","value":true},{"name":"mode","value":"dimmer"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"}]}},{"type":"sensor","id":"gpio_6","attributes":{"type":"scene","name":"I'm home","place":"hall","value":0,"online":true,"min":0,"max":7,"parameters":[{"name":"active","value":true},{"name":"mode","value":"sequential"},{"name":"active_level","value":"low"}]}}]};
         return sensors;
     });
     this.get('/rest/v2/sensors/temperature', function() {
@@ -137,7 +137,7 @@ export default function() {
         return temperature;
     });
     this.get('/rest/v2/sensors/scene ', function() {
-        let scene ={"data":[{"type":"scene","id":"gpio_6","attributes":{"name":"I'm home","place":"hall","value":0,"online":true,"parameters":[{"active":"true"},{"mode":"dimmer"},{"active_level":"low"}]}}]};
+        let scene ={"data":[{"type":"scene","id":"gpio_6","attributes":{"name":"I'm home","place":"hall","value":3,"online":true,"min":"0","max":"7","parameters":[{"active":"true"},{"mode":"sequential"},{"active_level":"low"},{"min":"0"},{"max":"7"}]}}]};
         return scene;
     });
         

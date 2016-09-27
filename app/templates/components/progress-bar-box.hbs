@@ -1,10 +1,11 @@
+{{#if sensors_type}}
 <div class="row">
   <div class="col-xs-12">
     <!-- jQuery Knob -->
     <div class="box box-solid">
       <div class="box-header">
         <i class="fa fa-bar-chart-o"></i>
-        <h3 class="box-title">Temperature</h3>
+        <h3 class="box-title">{{name}}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -23,19 +24,21 @@
                 <th>Name</th>
                 <th style="width:180px"></th>
                 <th style="width: 40px">Value</th>
+                <th style="width: 40px">Active</th>
             </tr>
-            {{#each temperatures as |temperature|}}
-            {{!-- <tr data-toggle="tooltip" title="{{temperature.serial}}"> --}}
+            {{#each sensors_type as |sensor|}}
+            {{!-- <tr data-toggle="tooltip" title="{{sensor.serial}}"> --}}
             <tr>
-            <td>{{temperature.id}}.</td>
-            <td>{{temperature.place}}</td>
-            <td>{{temperature.name}}</td>
+            <td>{{sensor.id}}</td>
+            <td>{{sensor.place}}</td>
+            <td>{{sensor.name}}</td>
             <td>
                 <div class="progress progress-xs">
-                    <div class="progress-bar progress-bar-danger" style="width: {{temperature.value}}%"></div>
+                    <div class="progress-bar progress-bar-danger" style="width: {{sensor.percent}}%"></div>
                 </div>
             </td>
-            <td><span class="badge bg-red">{{temperature.value}}&deg;</span></td>
+            <td><span class="badge bg-red">{{sensor.value}}{{symbol}}</span></td>
+            <td><span class="badge bg-red">{{sensor.parameters.active}}</span></td>
             </tr>
             {{/each}}
             </tbody>
@@ -44,6 +47,11 @@
       </div>
       <!-- /.box-body -->
      <div class="box-footer">
+     {{#each sensors_type as |sensor|}}
+      {{#each sensor.parameters as param}}
+      {{param}}
+      {{/each}}
+            {{/each}}
      </div>
         <!-- /.box-footer-->
     </div>
@@ -52,3 +60,4 @@
   <!-- /.col -->
 </div>
 <!-- /.row -->
+{{/if}}

@@ -8,12 +8,18 @@ inflector.uncountable('ntp');
 inflector.uncountable('clock');
 inflector.uncountable('network');
 inflector.uncountable('sensors');
+inflector.uncountable('generic');
+inflector.uncountable('digital');
+inflector.uncountable('dimmer');
 inflector.uncountable('temperature');
-inflector.uncountable('input');
+inflector.uncountable('water_level');
+inflector.uncountable('sequential');
+inflector.uncountable('scene');
+inflector.uncountable('multimeter');
 inflector.uncountable('rules');
 
 export default DS.JSONAPIAdapter.extend({
-    namespace: 'rest/v1',
+    namespace: 'rest/v2',
     // host: 'http://stm32_1.local'
 
     updateRecord: function(store, type, snapshot) {

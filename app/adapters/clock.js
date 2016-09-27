@@ -1,7 +1,7 @@
 import ApplicationAdapter from './application';
 import Ember from 'ember';
 export default ApplicationAdapter.extend({
-  
+  namespace: 'rest/v1',
   findRecord: function(store, type, id, snapshot) {
         var url = [this.namespace, type.modelName].join('/');
         return new Ember.RSVP.Promise(function(resolve, reject) {

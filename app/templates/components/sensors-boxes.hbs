@@ -1,3 +1,9 @@
 
-{{temperature-box temperatures = sensors.temperature}}
-{{input-box inputs = sensors.inputs}}
+{{progress-bar-box sensors_type = sensors.generic name = "Generic"}}
+{{progress-bar-box sensors_type = sensors.digital name = "Digital"}}
+{{progress-bar-box sensors_type = sensors.dimmer name = "Dimmer" symbol = "%"}}
+{{progress-bar-box sensors_type = sensors.temperature name = "Temperature" symbol = "°"}}
+{{progress-bar-box sensors_type = sensors.water_level name = "Water level" symbol = "%"}}
+{{progress-bar-box sensors_type = sensors.sequential name = "Sequential"}}
+{{progress-bar-box sensors_type = sensors.scene name = "Scene"}}
+{{progress-bar-box sensors_type = sensors.multimeter name = "Multimeter" symbol = "mV"}}

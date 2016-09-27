@@ -12,7 +12,7 @@ module.exports = function(defaults) {
         }
     });
     app.import("bower_components/jquery/dist/jquery.min.js");
-    app.import('bower_components/AdminLTE/bootstrap/css/bootstrap.css');
+    app.import('bower_components/bootstrap/dist/css/bootstrap.css');
     app.import('bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css');
     // app.import('bower_components/AdminLTE/dist/css/AdminLTE.css');
     app.import('vendor/AdminLTE/dist/css/AdminLTE.css');

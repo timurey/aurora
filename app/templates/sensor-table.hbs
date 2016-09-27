@@ -1,0 +1,23 @@
+{{#light-table table class='table table-striped table-hover' height='65vh' as |t|}}
+  {{t.head
+    onColumnClick=(action 'onColumnClick')
+    iconAscending='fa fa-sort-asc'
+    iconDescending='fa fa-sort-desc'
+    fixed=true
+  }}
+
+  {{#t.body
+    canExpand=true
+    multiRowExpansion=false
+  as |body|}}
+    {{#body.expanded-row as |row|}}
+      {{expanded-row row=row}}
+    {{/body.expanded-row}}
+
+    {{#if isLoading}}
+     {{#body.loader}}
+       {{table-loader}}
+     {{/body.loader}}
+   {{/if}}
+  {{/t.body}}
+{{/light-table}}
