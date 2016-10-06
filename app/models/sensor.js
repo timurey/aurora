@@ -14,5 +14,9 @@ export default Model.extend({
     percent: Ember.computed('min', 'max', 'value', function() {
         return Ember.String.htmlSafe(Math.floor((this.get('value')-this.get('min')) / (this.get('max')-this.get('min')) * 100));
 
-    })
+    }),
+        didLoad: function() {
+        var self = this;
+        setInterval(function() { self.reload(); }, 1 * 3000); //every 1 seconds
+    }
 });
