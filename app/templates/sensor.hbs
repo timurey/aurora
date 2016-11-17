@@ -1,0 +1,26 @@
+<!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+    Sensor
+    <small>{{model.id}}</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>{{#link-to "sensors"}}<i class="fa fa-dashboard"></i>Sensors{{/link-to}}</li>
+      <li>{{#link-to 'sensor' model.id}}{{model.id}}{{/link-to}}</li>
+    </ol>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    
+    <!-- Your Page Content Here -->
+    <!-- Main row -->
+    <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-12 connectedSortable ui-sortable">
+        {{sensor-box model = model cancel='cancelSensorCanges' apply='applySensorCanges' applyAndSave='applyAndSaveSensorCanges' addParameter = 'addParameter' deleteParameter = 'deleteParameter'}}      
+        <!-- row -->
+      </section>
+
+    </div>
+  </section>
+  <!-- /.content -->

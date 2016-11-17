@@ -5,8 +5,7 @@
 
     <div class="box-tools">
       <div class="input-group input-group-sm" style="width: 150px;">
-        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
+        
         <div class="input-group-btn">
           <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
         </div>
@@ -17,21 +16,21 @@
   <div class="box-body table-responsive no-padding">
     <table class="table table-hover">
       <tbody><tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Place</th>
         <th>Type</th>
         <th>Value</th>
-        <th>Online</th>
-        <th>Id</th>
+        <th>Online</th>  
       </tr>
-      {{#each data as |sensor|}}
+      {{#each model as |sensor|}}
       <tr>
+        <td>{{#link-to 'sensor' sensor.id}}{{sensor.id}}{{/link-to}}</td>
         <td>{{sensor.name}}</td>
         <td>{{sensor.place}}</td>
         <td>{{sensor.type}}</td>
         <td>{{sensor.value}}</td>
         <td>{{sensor.online}}</td>
-        <td>{{sensor.id}}</td>
       </tr>
       {{/each}}
     </tbody></table>

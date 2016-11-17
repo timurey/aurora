@@ -61,9 +61,9 @@ export default function() {
                 'id': 7,
                 'attributes': {
                     'links': {
-                        'self': '/rest/v1/sensors'
+                        'self': '/rest/v1/sensor'
                     },
-                    'type': 'sensors',
+                    'type': 'sensor',
                 }
             }, {
                 'type': 'restapi',
@@ -128,19 +128,160 @@ export default function() {
         let network = { "ipv4": { "useipv4": true, "usedhcp": true, "address": "192.168.2.15", "netmask": "255.255.255.0", "gateway": "192.168.2.1", "primarydns": "192.168.2.1", "secondarydns": "0.0.0.0" } };
         return network;
     });
-    this.get('/rest/v2/sensors', function() {
-        let sensors = {"data":[{"type":"sensor","id":"test_7","attributes":{"type":"temperature","name":"Температураводы","place":"Аквариум","value":6.0,"online":true,"parameters":[{"name":"active","value":true}]}},{"type":"sensor","id":"gpio_5","attributes":{"type":"temperature","name":"voltage","place":"scheme","value":3291,"online":true,"min":0,"max":3300,"parameters":[{"name":"active","value":true},{"name":"mode","value":"multimeter"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"},{"name":"formula","value":"(3300*x)/4096"}]}},{"type":"sensor","id":"gpio_10","attributes":{"type":"water level","name":"bath is full","place":"bath","value":0,"online":true,"min":0,"max":1,"parameters":[{"name":"active","value":true},{"name":"mode","value":"digital"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"}]}},{"type":"sensor","id":"gpio_4","attributes":{"type":"dimmer","name":"light dimmer","place":"bedroom","value":0,"online":true,"min":0,"max":100,"parameters":[{"name":"active","value":true},{"name":"mode","value":"dimmer"},{"name":"active_level","value":"low"},{"name":"pull","value":"low"}]}},{"type":"sensor","id":"gpio_6","attributes":{"type":"scene","name":"I'm home","place":"hall","value":0,"online":true,"min":0,"max":7,"parameters":[{"name":"active","value":true},{"name":"mode","value":"sequential"},{"name":"active_level","value":"low"}]}}]};
-        return sensors;
+    this.get('/rest/v2/sensor', function() {
+        let sensor = { "data": [{ "type": "sensor", "id": "test_7", "attributes": { "type": "temperature", "name": "Температураводы", "place": "Аквариум", "value": 6.0, "online": true, "parameters": [{ "name": "active", "value": true }] } }, { "type": "sensor", "id": "gpio_5", "attributes": { "type": "temperature", "name": "voltage", "place": "scheme", "value": 3291, "online": true, "min": 0, "max": 3300, "parameters": [{ "name": "active", "value": true }, { "name": "mode", "value": "multimeter" }, { "name": "active_level", "value": "low" }, { "name": "pull", "value": "low" }, { "name": "formula", "value": "(3300*x)/4096" }] } }, { "type": "sensor", "id": "gpio_10", "attributes": { "type": "water level", "name": "bath is full", "place": "bath", "value": 0, "online": true, "min": 0, "max": 1, "parameters": [{ "name": "active", "value": true }, { "name": "mode", "value": "digital" }, { "name": "active_level", "value": "low" }, { "name": "pull", "value": "low" }] } }, { "type": "sensor", "id": "gpio_4", "attributes": { "type": "dimmer", "name": "light dimmer", "place": "bedroom", "value": 0, "online": true, "min": 0, "max": 100, "parameters": [{ "name": "active", "value": true }, { "name": "mode", "value": "dimmer" }, { "name": "active_level", "value": "low" }, { "name": "pull", "value": "low" }] } }, { "type": "sensor", "id": "gpio_6", "attributes": { "type": "scene", "name": "I'm home", "place": "hall", "value": 0, "online": true, "min": 0, "max": 7, "parameters": [{ "name": "active", "value": true }, { "name": "mode", "value": "sequential" }, { "name": "active_level", "value": "low" }] } }] };
+        return sensor;
     });
-    this.get('/rest/v2/sensors/temperature', function() {
-        let temperature = {"data":[{"type":"temperature","id":"test_7","attributes":{"name":"Температураводы","place":"Аквариум","value":19.0,"online":true,"parameters":[{"active":"true"}]}},{"type":"temperature","id":"gpio_5","attributes":{"name":"water temperature","place":"аквариум","value":0,"online":true,"parameters":[{"active":"true"},{"mode":"dimmer"},{"active_level":"low"},{"pull":"low"}]}}]};
-        return temperature;
+    this.get('/rest/v2/sensor/test_7', function() {
+        let test_7 = {
+            "data": {
+                "type": "sensor",
+                "id": "test_7",
+                "attributes": {
+                    "type": "temperature",
+                    "name": "Температура воды",
+                    "place": "Аквариум",
+                    "value": 20.0,
+                    "online": true,
+                    "parameters": [{
+                        "name": "active",
+                        "value": true
+                    }]
+                }
+            }
+
+        };
+
+        return test_7;
     });
-    this.get('/rest/v2/sensors/scene ', function() {
-        let scene ={"data":[{"type":"scene","id":"gpio_6","attributes":{"name":"I'm home","place":"hall","value":3,"online":true,"min":"0","max":"7","parameters":[{"active":"true"},{"mode":"sequential"},{"active_level":"low"},{"min":"0"},{"max":"7"}]}}]};
-        return scene;
+    this.get('/rest/v2/sensor/gpio_5 ', function() {
+        let gpio_5 = {
+            "data": {
+                "type": "sensor",
+                "id": "gpio_5",
+                "attributes": {
+                    "type": "temperature",
+                    "name": "voltage",
+                    "place": "scheme",
+                    "value": 829,
+                    "online": true,
+                    "min": 0,
+                    "max": 3300,
+                    "parameters": [{
+                        "name": "active",
+                        "value": true
+                    }, {
+                        "name": "mode",
+                        "value": "multimeter"
+                    }, {
+                        "name": "active_level",
+                        "value": "low"
+                    }, {
+                        "name": "pull",
+                        "value": "low"
+                    }, {
+                        "name": "formula",
+                        "value": "(3300*x)/4096"
+                    }]
+                }
+            }
+        };
+        return gpio_5;
     });
-        
+
+    this.get('/rest/v2/sensor/gpio_10 ', function() {
+        let gpio_10 = {
+
+            "data": {
+                "type": "sensor",
+                "id": "gpio_10",
+                "attributes": {
+                    "type": "generic",
+                    "name": "bath is full",
+                    "place": "bath",
+                    "value": 0,
+                    "online": true,
+                    "min": 0,
+                    "max": 1,
+                    "parameters": [{
+                        "name": "active",
+                        "value": true
+                    }, {
+                        "name": "mode",
+                        "value": "digital"
+                    }, {
+                        "name": "active_level",
+                        "value": "low"
+                    }, {
+                        "name": "pull",
+                        "value": "low"
+                    }]
+                }
+            }
+        };
+        return gpio_10;
+    });
+    this.get('/rest/v2/sensor/gpio_4 ', function() {
+        let gpio_4 = {
+
+            "data": {
+                "type": "sensor",
+                "id": "gpio_4",
+                "attributes": {
+                    "type": "dimmer",
+                    "name": "light dimmer",
+                    "place": "bedroom",
+                    "value": 0,
+                    "online": true,
+                    "min": 0,
+                    "max": 100,
+                    "parameters": [{
+                        "name": "active",
+                        "value": true
+                    }, {
+                        "name": "mode",
+                        "value": "dimmer"
+                    }, {
+                        "name": "active_level",
+                        "value": "low"
+                    }, {
+                        "name": "pull",
+                        "value": "low"
+                    }]
+                }
+            }
+        }
+        return gpio_4;
+    });
+
+    this.get('/rest/v2/sensor/gpio_6', function() {
+        let gpio_6 = {
+            "data": {
+                "type": "sensor",
+                "id": "gpio_6",
+                "attributes": {
+                    "type": "scene",
+                    "name": "I'm home",
+                    "place": "hall",
+                    "value": 0,
+                    "online": true,
+                    "min": 0,
+                    "max": 7,
+                    "parameters": [{
+                        "name": "active",
+                        "value": true
+                    }, {
+                        "name": "mode",
+                        "value": "sequential"
+                    }, {
+                        "name": "active_level",
+                        "value": "low"
+                    }]
+                }
+            }
+        }
+        return gpio_6;
+    });
     /*
       Config (with defaults).
 

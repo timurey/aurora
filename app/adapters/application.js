@@ -7,15 +7,8 @@ inflector.uncountable('cpu');
 inflector.uncountable('ntp');
 inflector.uncountable('clock');
 inflector.uncountable('network');
-inflector.uncountable('sensors');
-inflector.uncountable('generic');
-inflector.uncountable('digital');
-inflector.uncountable('dimmer');
-inflector.uncountable('temperature');
-inflector.uncountable('water_level');
-inflector.uncountable('sequential');
-inflector.uncountable('scene');
-inflector.uncountable('multimeter');
+inflector.uncountable('sensor');
+
 inflector.uncountable('rules');
 
 export default DS.JSONAPIAdapter.extend({
@@ -25,7 +18,8 @@ export default DS.JSONAPIAdapter.extend({
     updateRecord: function(store, type, snapshot) {
         var data = this.serialize(snapshot, { includeId: true });
         var id = snapshot.id;
-        var url = [this.namespace, type.modelName].join('/');
+        debugger;
+        var url = [this.namespace, type.modelName, id].join('/');
 
         return new Ember.RSVP.Promise(function(resolve, reject) {
             Ember.$.ajax({

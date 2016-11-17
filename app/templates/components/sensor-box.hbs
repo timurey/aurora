@@ -1,0 +1,95 @@
+          <!-- Horizontal Form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">{{model.id}}</h3>
+                {{!--<div class="box-tools pull-right" data-toggle="tooltip" title="Enabled">
+                  {{btn-togle enable = ntp.enabled inactive = (unless true false)}}
+                </div>--}}
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+				<div class="box-body">
+          <div class="input-group box-tools" data-toggle="tooltip" title="ID сенсора">
+            <span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+            {{input value= model.id class = "form-control" placeholder = "sensor ID" }}
+          </div>
+                  <!-- /.input-group -->
+          <br>
+          <div class="input-group box-tools" data-toggle="tooltip" title="тип сенсора">
+            <span class="input-group-addon"><i class="fa fa-object-group"></i></span>
+            {{input value= model.type class = "form-control" placeholder = "sensor type" }}
+          </div>
+                  <!-- /.input-group -->
+          <br>
+          <div class="input-group box-tools" data-toggle="tooltip" title="имя сенсора">
+            <span class="input-group-addon"><i class="fa fa-laptop"></i></span>
+            {{input value= model.name class = "form-control" placeholder = "sensor name" }}
+          </div>
+                  <!-- /.input-group -->
+          <br>
+                    <div class="input-group box-tools" data-toggle="tooltip" title="место сенсора">
+            <span class="input-group-addon"><i class="fa fa-map-o"></i></span>
+            {{input value= model.place class = "form-control" placeholder = "sensor place" }}
+          </div>
+                  <!-- /.input-group -->
+          <br>                  
+          <div class="input-group box-tools" data-toggle="tooltip" title="значение сенсора">
+            <span class="input-group-addon"><i class="fa fa-bar-chart"></i></span>
+            {{input value= model.value class = "form-control" placeholder = "sensor value"}}
+          </div>
+                  <!-- /.input-group -->
+          <br>
+          <div class="input-group box-tools" data-toggle="tooltip" title="минимально возможное значение">
+            <span class="input-group-addon"><i class="fa fa-volume-down"></i></span>
+            {{input value= model.min class = "form-control" placeholder = "sensor min" disabled = true}}
+          </div>
+                  <!-- /.input-group -->
+          <br>
+          <div class="input-group box-tools" data-toggle="tooltip" title="максимально возможное значение">
+            <span class="input-group-addon"><i class="fa fa-volume-up"></i></span>
+            {{input value= model.max class = "form-control" placeholder = "sensor min" disabled = true}}
+          </div>
+                  <!-- /.input-group -->                  
+          <br>
+
+			{{#if model.parameters }}
+				Дополнительные параметры
+   				<div class="box-body table-responsive no-padding"> 
+					<table class="table table-bordered table-condensed">
+					<tbody><tr>
+						<th>параметр</th>
+						<th>значение</th>
+					</tr>
+			{{#each model.parameters as |parameter|}}
+					<tr>
+						<td>{{input type = "text" class = "form-control" value = parameter.name}}</td>
+						<td>{{input type = "text" class = "form-control" value = parameter.value}}</td>
+            <td>
+
+              <button type="button" class="btn btn-danger btn-sm" {{action "deleteParameter" parameter}} data-toggle="tooltip" title="Удалить параметр">delete</button>
+
+              <button type="button" class="btn btn-sm" {{action "addParameter" parameter}} data-toggle="tooltip" title="Добавить параметр">add</button>
+            </td>
+					</tr>
+			{{/each}}
+    				</tbody></table>
+  				 </div> 
+					<!-- /.bootstrap-timepicker -->
+			{{/if}}
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="button" class="btn btn-default" {{action "cancel"}} >Cancel</button>
+                <div class=" pull-right">
+                <button type="button" class="btn btn-primary" {{action "apply"}} disabled={{isLoading}}>Apply</button>
+                <button type="button" class="btn btn-primary" {{action "applyAndSave"}} disabled={{isLoading}}>Apply and Save</button>
+                {{if isLoading 'Loading...'}}
+{{if success success}}
+{{if error error}}
+                </div>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->

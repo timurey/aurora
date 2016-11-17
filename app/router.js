@@ -6,12 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('boxes');
   this.route('dashboard');
-  this.route('test');
   this.route('fourOhFour', { path: "*path"});
   this.route('system');
-  this.route('rules');
+  this.route('sensors');
+  this.route('sensor', {path: "/sensors/:sensor_id"});
 });
 
 export default Router;
