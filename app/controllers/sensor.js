@@ -24,7 +24,8 @@ export default Ember.Controller.extend({
             }
         },
         cancelSensorCanges() {
-            this.controller.get("model").rollbackAttributes();
+            let sensor = this.get('model');
+            sensor.rollbackAttributes();
         },
         applySensorCanges() {
             console.log('apply:');
@@ -37,8 +38,6 @@ export default Ember.Controller.extend({
                 .catch(() => {
                     this.set('error', 'Sensor is too unruly to be saved.');
                 });
-
-
         },
         applyAndSaveSensorCanges() {
             console.log('apply and save:');
@@ -48,12 +47,22 @@ export default Ember.Controller.extend({
         },
         addParameter(parameter) {
             console.log('add parameter:');
-            
+
             const parametersTemplate = { name: "", value: "" };
             let sensor = this.get("model");
             let params = sensor.data.parameters;
-            params.insertAt(params.indexOf(parameter)+1, parametersTemplate);
+            params.insertAt(params.indexOf(parameter) + 1, parametersTemplate);
 
+        },
+        deleteSensor(parameter) {
+            console.log('deleting sensor');
+            console.log(parameter);
+            let sensor = this.get('model');
+            this.set('isLoading', true);
+            sensor.destroyRecord()
+                .then((result) => {
+                    this.transitionToRoute('sensors');
+                })
         }
     }
 });

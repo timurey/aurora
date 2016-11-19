@@ -80,6 +80,12 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
+              <div class="btn-group dropup">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Delete <span class="fa fa-caret-down"></span></button>
+              <ul class="dropdown-menu ">
+                <li><a href="#" {{action "deleteSensor" model}}  disabled={{isLoading}}>Confirm delete</a></li>
+              </ul>
+              </div>
                 <button type="button" class="btn btn-default" {{action "cancel"}} >Cancel</button>
                 <div class=" pull-right">
                 <button type="button" class="btn btn-primary" {{action "apply"}} disabled={{isLoading}}>Apply</button>

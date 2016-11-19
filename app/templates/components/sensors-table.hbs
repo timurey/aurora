@@ -3,14 +3,12 @@
   <div class="box-header">
     <h3 class="box-title">Sensors:</h3>
 
-    <div class="box-tools">
-      <div class="input-group input-group-sm" style="width: 150px;">
-        
-        <div class="input-group-btn">
-          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-    </div>
+<div class="pull-right box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-plus"></i> Add sensor</button>
+                </div>
+              </div>
+
   </div>
   <!-- /.box-header -->
   <div class="box-body table-responsive no-padding">
@@ -22,18 +20,27 @@
         <th>Type</th>
         <th>Value</th>
         <th>Online</th>  
+        <th></th>
       </tr>
       {{#each model as |sensor|}}
       <tr>
-        <td>{{#link-to 'sensor' sensor.id}}{{sensor.id}}{{/link-to}}</td>
+        <td>{{sensor.id}}</td>
         <td>{{sensor.name}}</td>
         <td>{{sensor.place}}</td>
         <td>{{sensor.type}}</td>
         <td>{{sensor.value}}</td>
         <td>{{sensor.online}}</td>
+        <td>
+          <div class="tools">
+            {{#link-to 'sensor' sensor.id}}<i class="fa fa-edit"></i>{{/link-to}}
+            <a href=#><i class="fa fa-trash-o"></i></a>
+
+          </div>
+        </td>
       </tr>
       {{/each}}
     </tbody></table>
   </div>
+  {{outlet 'modal'}}
   <!-- /.box-body -->
 </div>

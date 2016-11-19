@@ -5,10 +5,10 @@ export default Ember.Component.extend({
     success: '',
     error: null,
     actions: {
-        deleteParameter: function(parameter){
+        deleteParameter: function(parameter) {
             this.sendAction('deleteParameter', parameter);
         },
-        addParameter: function(parameter){
+        addParameter: function(parameter) {
             this.sendAction('addParameter', parameter);
         },
         cancel: function(id) {
@@ -19,6 +19,9 @@ export default Ember.Component.extend({
         },
         applyAndSave: function(id) {
             this.sendAction('applyAndSave', id);
+        },
+        deleteSensor: function(id) {
+            this.sendAction('deleteSensor', id);
         },
         stopEvents: function() {
             // $('connectedSortable').sortable().destroy();
