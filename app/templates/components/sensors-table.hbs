@@ -5,7 +5,7 @@
 
 <div class="pull-right box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" class="btn btn-default btn-sm pull-right"><i class="fa fa-plus"></i> Add sensor</button>
+                {{#link-to 'sensors.add' class="btn btn-default btn-sm pull-right"}}<i class="fa fa-plus"></i> Add sensor{{/link-to}}
                 </div>
               </div>
 
@@ -22,7 +22,7 @@
         <th>Online</th>  
         <th></th>
       </tr>
-      {{#each model as |sensor|}}
+      {{#each data as |sensor|}}
       <tr>
         <td>{{sensor.id}}</td>
         <td>{{sensor.name}}</td>
@@ -32,8 +32,8 @@
         <td>{{sensor.online}}</td>
         <td>
           <div class="tools">
-            {{#link-to 'sensor' sensor.id}}<i class="fa fa-edit"></i>{{/link-to}}
-            <a href=#><i class="fa fa-trash-o"></i></a>
+            {{#link-to 'sensors.show' sensor.id}}<i class="fa fa-edit"></i>{{/link-to}}
+            {{#link-to 'sensors.delete' sensor.id}}<i class="fa fa-trash-o"></i>{{/link-to}}
 
           </div>
         </td>
@@ -41,6 +41,5 @@
       {{/each}}
     </tbody></table>
   </div>
-  {{outlet 'modal'}}
   <!-- /.box-body -->
 </div>

@@ -80,16 +80,11 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-              <div class="btn-group dropup">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Delete <span class="fa fa-caret-down"></span></button>
-              <ul class="dropdown-menu ">
-                <li><a href="#" {{action "deleteSensor" model}}  disabled={{isLoading}}>Confirm delete</a></li>
-              </ul>
-              </div>
-                <button type="button" class="btn btn-default" {{action "cancel"}} >Cancel</button>
+              {{#link-to 'sensors.delete' class="btn btn-danger" }}<div data-toggle="tooltip" title="Удалить сенсор"><i class="fa fa-trash-o"></i> Delete</div>{{/link-to}}
+                <button type="button" class="btn btn-default" {{action "cancel"}} ><div data-toggle="tooltip" title="Отменить изменения"><i class="fa fa-undo"></i> Rollback</div></button>
                 <div class=" pull-right">
-                <button type="button" class="btn btn-primary" {{action "apply"}} disabled={{isLoading}}>Apply</button>
-                <button type="button" class="btn btn-primary" {{action "applyAndSave"}} disabled={{isLoading}}>Apply and Save</button>
+                <button type="button" class="btn btn-primary" {{action "apply"}} disabled={{isLoading}}><div data-toggle="tooltip" title="Применить"><i class="fa fa-check"></i> Apply</div></button>
+                <button type="button" class="btn btn-primary" {{action "applyAndSave"}} disabled={{isLoading}}><div data-toggle="tooltip" title="Применить и сохранить"><i class="fa fa-save"></i> Apply and Save</div></button>
                 {{if isLoading 'Loading...'}}
 {{if success success}}
 {{if error error}}
